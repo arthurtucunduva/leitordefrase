@@ -1,0 +1,42 @@
+# desenvolver um software para contar o número de espaços em branco, contar o número de vogais ou consoantes, contar o número de caractéres especiais, contar o número de ocorrência de cada vogal, contar o número de ocorrência de um caracter específico.
+frase = str(input('digite uma frase:')).upper()  
+caracter = input('Digite um caractere para contar: ').upper()
+print(f'Ocorrências de {caracter}: {frase.count(caracter)}')                                                                             # criar uma lista para a frase   
+                                                                  
+caracteres_especiais =  (',', '.', '#', '$', '%', '?', '!', ' ', ';', ':', '"', "'")
+
+n = len(frase)                                                                           # definir as variáveis
+c = somabrancos = somavogais = somaconsoantes = somacaracter = ocoA = ocoE = ocoI = ocoO = ocoU = ocoP= 0 
+print('''frase''')
+while c < n:                                                                             # criando a sequência de repetição
+  if frase[c] == ' ':                                                                    # estabelecendo as condições
+    somabrancos += 1
+  elif frase [c] in ('A','E','I','U','O'):
+    somavogais += 1 
+    
+    if frase[c] == 'A':
+            ocoA += 1
+    elif frase[c] == 'E':
+            ocoE += 1
+    elif frase[c] == 'I':
+            ocoI += 1
+    elif frase[c] == 'O':
+            ocoO += 1
+    elif frase[c] == 'U':
+            ocoU += 1
+  elif frase[c] in caracteres_especiais:
+        somacaracter += 1
+  else:
+    somaconsoantes += 1
+  c += 1
+
+print(f'número de espaços em branco: {somabrancos}')
+print(f'número de vogais: {somavogais}')
+print(f'número de consoantes: {somaconsoantes}')
+print(f'soma de caractéres especiais: {somacaracter}')
+print(f'ocorrência do A: {ocoA}')
+print(f'ocorrência do E: {ocoE}')
+print(f'ocorrência do I: {ocoI}')
+print(f'ocorrência do O: {ocoO}')
+print(f'ocorrência do U: {ocoU}')
+print(f'ocorrência do P: {ocoP}')
